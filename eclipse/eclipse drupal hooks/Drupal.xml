@@ -1,0 +1,1594 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook action info - Declare information about one or more Drupal actions." enabled="true" name="hook_action_info">/**
+ * Implements hook_action_info().
+ */
+function ${module_name}_action_info() {
+  return array(
+    '${module_name}_${cursor}' =&gt; array(
+      'description' =&gt; t(''),
+      'type' =&gt; '',
+      'configurable' =&gt; ,
+      'hooks' =&gt; array(
+        '' =&gt; array(),
+      )
+    )
+  );
+}
+</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook action info alter - Alter the actions declared by another module." enabled="true" name="hook_action_info_alter">/**
+ * Implements hook_action_info_alter().
+ */
+function ${module_name}_action_info_alter(&amp;$$actions) {
+  $$actions['${cursor}'];
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook actions delete - Execute code after an action is deleted." enabled="true" name="hook_actions_delete">/**
+ * Implements hook_actions_delete().
+ */
+function ${module_name}_actions_delete($$aid) {
+  ${cursor}db_delete('actions_assignments')
+    -&gt;condition('aid', $$aid)
+    -&gt;execute();
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook admin paths - Define administrative paths." enabled="true" name="hook_admin_paths">/**
+ * Implements hook_admin_paths().
+ */
+function ${module_name}_admin_paths() {
+  $$paths = array(
+    '${module_name}/*/add' =&gt; TRUE, 
+    '${module_name}/*/edit' =&gt; TRUE,
+  );
+  return $$paths;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook admin paths alter - Redefine administrative paths defined by other modules." enabled="true" name="hook_admin_paths_alter">/**
+ * Implements hook_admin_paths_alter().
+ */
+function ${module_name}_admin_paths_alter(&amp;$$paths) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook aggregator fetch - Implement this hook to create an alternative fetcher for aggregator module." enabled="true" name="hook_aggregator_fetch">/**
+ * Implements hook_aggregator_fetch.
+ */
+function ${module_name}_aggregator_fetch($$feed) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook aggregator fetch info - Implement this hook to expose the title and a short description of your fetcher." enabled="true" name="hook_aggregator_fetch_info">/**
+ * Implements hook_aggregator_fetch_info).
+ */
+function ${module_name}_aggregator_fetch_info() {
+  return array(
+    'title' =&gt; t('${cursor}'), 
+    'description' =&gt; t(''),
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook aggregator parse - Implement this hook to create an alternative parser for aggregator module." enabled="true" name="hook_aggregator_parse">/**
+ * Implements hook_aggregator_parse.
+ */
+function ${module_name}_aggregator_parse($$feed) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook aggregator parse info - Implement this hook to expose the title and a short description of your parser." enabled="true" name="hook_aggregator_parse_info">/**
+ * Implements hook_aggregator_parse_info).
+ */
+function ${module_name}_aggregator_parse_info() {
+  return array(
+    'title' =&gt; t('${cursor}'), 
+    'description' =&gt; t(''),
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook aggregator process - Implement this hook to create a processor for aggregator module." enabled="true" name="hook_aggregator_process">/**
+ * Implements hook_aggregator_process.
+ */
+function ${module_name}_aggregator_process($$feed) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook aggregator process info - Implement this hook to expose the title and a short description of your parser." enabled="true" name="hook_aggregator_process_info">/**
+ * Implements hook_aggregator_process_info.
+ */
+function ${module_name}_aggregator_process_info() {
+  return array(
+    'title' =&gt; t('${cursor}'), 
+    'description' =&gt; t(''),
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook aggregator remove - Implement this hook to remove stored data if a feed is being deleted or a feed's items are being removed." enabled="true" name="hook_aggregator_remove">/**
+ * Implements hook_aggregator_remove.
+ */
+function ${module_name}_aggregator_remove($$feed) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook ajax render alter - Alter the commands that are sent to the user through the AJAX framework." enabled="true" name="hook_ajax_render_alter">/**
+ * Implements hook_ajax_render_alter.
+ */
+function ${module_name}_ajax_render_alter($$commands) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook archiver info - Declare archivers to the system." enabled="true" name="hook_archiver_info">/**
+ * Implements hook_archiver_info.
+ */
+function ${module_name}_archiver_info() {
+  return array(
+    '${cursor}' =&gt; array(
+      'class' =&gt; '', 
+      'extensions' =&gt; array(''),
+    ),
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook archiver info alter - Alter archiver information declared by other modules." enabled="true" name="hook_archiver_info_alter">/**
+ * Implements hook_archiver_info_alter.
+ */
+function ${module_name}_archiver_info_alter(&amp;$$info) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook batch alter - Alter batch information before a batch is processed." enabled="true" name="hook_batch_alter">/**
+ * Implements hook_batch_alter.
+ */
+function ${module_name}_batch_alter(&amp;$$batch) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook block configure - Define a configuration form for a block." enabled="true" name="hook_block_configure">/**
+ * Implements hook_block_configure().
+ */
+function ${module_name}_block_configure($$delta = '') {
+  $$form = array();
+  if($$delta = ${cursor}) {
+   $$form[''] = array(
+      '#type' =&gt; '', 
+      '#title' =&gt; t(''), 
+      '#default_value' =&gt;, 
+      '#options' =&gt;,
+    );
+  }
+  return $$form;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook block info - Define all blocks provided by the module." enabled="true" name="hook_block_info">/**
+ * Implements hook_block_info().
+ */
+function ${module_name}_block_info() {
+  $$blocks['${cursor}'] = array(
+    'info' =&gt; t(''), 
+  );
+
+  return $$blocks;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook block info alter - Change block definition before saving to the database." enabled="true" name="hook_block_info_alter">/**
+ * Implements hook_block_info_alter().
+ */
+function ${module_name}_block_info_alter($$delta = '') {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook block list alter - Act on blocks prior to rendering." enabled="true" name="hook_block_list_alter">/**
+ * Implements hook_block_list_alter().
+ */
+function ${module_name}_block_list_alter(&amp;$$blocks) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook block save - Save the configuration options from hook_block_configure()." enabled="true" name="hook_block_save">/**
+ * Implements hook_block_save().
+ */
+function ${module_name}_block_save($$delta = '', $$edit = array()) {
+  if ($$delta == '${cursor}') {
+  }
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook block view - Return a rendered or renderable view of a block." enabled="true" name="hook_block_view">/**
+ * Implements hook_block_view().
+ */
+function ${module_name}_block_view($$delta = '') {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook block view alter - Perform alterations to the content of a block." enabled="true" name="hook_block_view_alter">/**
+ * Implements hook_block_view_alter().
+ */
+function ${module_name}_block_view_alter(&amp;$$data, $$block) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook block view MODULE DELTA alter - Perform alterations to a specific block." enabled="true" name="hook_block_view_MODULE_DELTA_alter">/**
+ * Implements hook_block_view_MODULE_DELTA_alter().
+ */
+function ${module_name}_block_view_MODULE_DELTA_alter(&amp;$$data, $$block) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook boot - Perform setup tasks." enabled="true" name="hook_boot">/**
+ * Implements hook_boot().
+ */
+function ${module_name}_boot() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook comment delete - The comment is being deleted by the moderator." enabled="true" name="hook_comment_delete">/**
+ * Implements hook_comment_delete().
+ */
+function ${module_name}_comment_delete($$comment) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook comment insert - The comment is being inserted." enabled="true" name="hook_comment_insert">/**
+ * Implements hook_comment_insert().
+ */
+function ${module_name}_comment_insert($$comment) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook comment load - Comments are being loaded from the database." enabled="true" name="hook_comment_load">/**
+ * Implements hook_comment_load().
+ */
+function ${module_name}_comment_load($$comment) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook comment presave - The comment passed validation and is about to be saved." enabled="true" name="hook_comment_presave">/**
+ * Implements hook_comment_presave().
+ */
+function ${module_name}_comment_presave($$comment) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook comment publish - The comment is being published by the moderator." enabled="true" name="hook_comment_publish">/**
+ * Implements hook_comment_publish().
+ */
+function ${module_name}_comment_publish($$comment) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook comment unpublish - The comment is being unpublished by the moderator." enabled="true" name="hook_comment_unpublish">/**
+ * Implements hook_comment_unpublish().
+ */
+function ${module_name}_comment_unpublish($$comment) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook comment update - The comment is being updated." enabled="true" name="hook_comment_update">/**
+ * Implements hook_comment_update().
+ */
+function ${module_name}_comment_update($$comment) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook comment view - The comment is being viewed." enabled="true" name="hook_comment_view">/**
+ * Implements hook_comment_view().
+ */
+function ${module_name}_comment_view($$comment, $$view_mode, $$langcode) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook comment view alter - Alter the comment that was built." enabled="true" name="hook_comment_view_alter">/**
+ * Implements hook_comment_view_alter().
+ */
+function ${module_name}_comment_view_alter(&amp;$$build) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook contextual links view alter - Alter a contextual links element before it is rendered." enabled="true" name="hook_contextual_links_view_alter">/**
+ * Implements hook_contextual_links_view_alter().
+ */
+function ${module_name}_contextual_links_view_alter($$element, $$items) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook countries alter - Alter the default country list." enabled="true" name="hook_countries_alter">/**
+ * Implements hook_countries_alter().
+ */
+function ${module_name}_countries_alter($$countries) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook cron - Perform periodic actions." enabled="true" name="hook_cron">/**
+ * Implements hook_cron().
+ */
+function ${module_name}_cron() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook cron queue info - Declare queues holding items that need to be run periodically." enabled="true" name="hook_cron_queue_info">/**
+ * Implements hook_cron_queue_info().
+ */
+function ${module_name}_cron_queue_info() {
+  $$queues['${cursor}'] = array(
+    'worker callback' =&gt;, 
+    'time' =&gt;,
+  );
+  return $$queues;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook cron info alter - Alter cron queue information before cron runs." enabled="true" name="hook_cron_queue_info_alter">/**
+ * Implements hook_cron_queue_info_alter().
+ */
+function ${module_name}_cron_queue_info_alter(&amp;$$queues) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook css alter - Alter CSS files before they are output on the page." enabled="true" name="hook_css_alter">/**
+ * Implements hook_css_alter().
+ */
+function ${module_name}_css_alter(&amp;$$queues) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook custom theme - Return the machine-readable name of the theme to use for the current page." enabled="true" name="hook_custom_theme">/**
+ * Implements hook_custom_theme().
+ */
+function ${module_name}_custom_theme() {
+  if (isset($$_GET['${cursor}'])) {
+    return $$_GET[''];
+  }
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook dashboard regions - Adds regions to the dashboard." enabled="true" name="hook_dashboard_regions">/**
+ * Implements hook_dashboard_regions().
+ */
+function ${module_name}_dashboard_regions() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook dashboard regions alter - Alter dashboard regions provided by modules." enabled="true" name="hook_dashboard_regions_alter">/**
+ * Implements hook_dashboard_regions_alter().
+ */
+function ${module_name}_dashboard_regions_alter($$regions) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook date format types - Define additional date types." enabled="true" name="hook_date_format_types">/**
+ * Implements hook_date_format_types().
+ */
+function ${module_name}_date_format_types() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook date format types alter - Modify existing date types." enabled="true" name="hook_date_format_types_alter">/**
+ * Implements hook_date_format_types_alter().
+ */
+function ${module_name}_date_format_types_alter(&amp;$$types) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook date formats - Define additional date formats." enabled="true" name="hook_date_formats">/**
+ * Implements hook_date_formats().
+ */
+function ${module_name}_date_formats() {
+  return array(
+    array(
+      'type' =&gt; '${cursor}', 
+      'format' =&gt; '', 
+      'locales' =&gt; array(''),
+    ),
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook date formats alter - Alter date formats declared by another module." enabled="true" name="hook_date_formats_alter">/**
+ * Implements hook_date_formats_alter().
+ */
+function ${module_name}_date_formats_alter(&amp;$$formats) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook delete - Respond to node deletion." enabled="true" name="hook_delete">/**
+ * Implements hook_delete().
+ */
+function ${module_name}_delete(&amp;$$node) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook disable - Perform necessary actions before module is disabled." enabled="true" name="hook_disable">/**
+ * Implements hook_disable().
+ */
+function ${module_name}_disable() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook drupal goto alter - Change the page the user is sent to by drupal_goto()." enabled="true" name="hook_drupal_goto_alter">/**
+ * Implements hook_drupal_goto_alter().
+ */
+function ${module_name}_drupal_goto_alter(&amp;$$path, &amp;$$options, &amp;$$http_response_code) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook element_info - Allows modules to declare their own Forms API element types and specify their default values." enabled="true" name="hook_element_info">/**
+ * Implements hook_element_info().
+ */
+function ${module_name}_element_info() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook element_info_alter - Alter the element type information returned from modules." enabled="true" name="hook_element_info_alter">/**
+ * Implements hook_element_info_alter().
+ */
+function ${module_name}_element_info_alter(&amp;$$type) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook enable - Perform necessary actions after module is enabled." enabled="true" name="hook_enable">/**
+ * Implements hook_enable().
+ */
+function ${module_name}_enable() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook entity delete - Act on entities when deleted." enabled="true" name="hook_entity_delete">/**
+ * Implements hook_entity_delete().
+ */
+function ${module_name}_entity_delete($$entity, $$type) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook entity info - Inform the base system and the Field API about one or more entity types." enabled="true" name="hook_entity_info">/**
+ * Implements hook_entity_info().
+ */
+function ${module_name}_entity_info() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook entity info alter - Alter the entity info" enabled="true" name="hook_entity_info_alter">/**
+ * Implements hook_entity_info_alter().
+ */
+function ${module_name}_entity_info_alter($$entity) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook entity insert - Act on entities when inserted." enabled="true" name="hook_entity_insert">/**
+ * Implements hook_entity_insert().
+ */
+function ${module_name}_entity_insert($$entity, $$type) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook entity load - Act on entities when loaded." enabled="true" name="hook_entity_load">/**
+ * Implements hook_entity_load().
+ */
+function ${module_name}_entity_load($$entities, $$type) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook entity prepare view - Act on entities as they are being prepared for view." enabled="true" name="hook_entity_prepare_view">/**
+ * Implements hook_entity_prepare_view().
+ */
+function ${module_name}_entity_prepare_view($$entities, $$type) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook entity presave - Act on an entity before it is about to be created or updated." enabled="true" name="hook_entity_presave">/**
+ * Implements hook_entity_presave().
+ */
+function ${module_name}_entity_presave($$entities, $$type) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook entity query alter - Alter or execute an EntityFieldQuery." enabled="true" name="hook_entity_query_alter">/**
+ * Implements hook_entity_query_alter().
+ */
+function ${module_name}_entity_query_alter($$query) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook entity update - Act on entities when updated." enabled="true" name="hook_entity_update">/**
+ * Implements hook_entity_update().
+ */
+function ${module_name}_entity_update($$entity, $$type) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook entity view - Act on entities being assembled before rendering." enabled="true" name="hook_entity_view">/**
+ * Implements hook_entity_view().
+ */
+function ${module_name}_entity_view($$entity, $$type, $$view_mode, $$langcode) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook entity view - Alter the results of ENTITY_view()." enabled="true" name="hook_entity_view_alter">/**
+ * Implements hook_entity_view_alter().
+ */
+function ${module_name}_entity_view_alter($$build, $$type) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook exit - Perform cleanup tasks. This hook is run at the end of each page request." enabled="true" name="hook_exit">/**
+ * Implements hook_exit().
+ */
+function ${module_name}_exit() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook file copy - Respond to a file that has been copied." enabled="true" name="hook_file_copy">/**
+ * Implements hook_file_copy().
+ */
+function ${module_name}_file_copy($$file, $$source) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook file delete - Respond to a file being deleted." enabled="true" name="hook_file_delete">/**
+ * Implements hook_file_delete().
+ */
+function ${module_name}_file_delete($$file) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook file download - Control access to private file downloads and specify HTTP headers." enabled="true" name="hook_file_download">/**
+ * Implements hook_file_download().
+ */
+function ${module_name}_file_download($$uri) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook file insert - Respond to a file being added." enabled="true" name="hook_file_insert">/**
+ * Implements hook_file_insert().
+ */
+function ${module_name}_file_insert($$file) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook file load - Load additional information into file objects." enabled="true" name="hook_file_load">/**
+ * Implements hook_file_load().
+ */
+function ${module_name}_file_load($$files) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook file mimetype mapping alter - Alter MIME type mappings used to determine MIME type from a file extension." enabled="true" name="hook_file_mimetype_mapping_alter">/**
+ * Implements hook_file_mimetype_mapping_alter().
+ */
+function ${module_name}_file_mimetype_mapping_alter(&amp;$$mapping) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook file move - Respond to a file that has been moved." enabled="true" name="hook_file_move">/**
+ * Implements hook_file_move().
+ */
+function ${module_name}_file_move($$file, $$source) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook file presave - Act on a file being inserted or updated." enabled="true" name="hook_file_presave">/**
+ * Implements hook_file_presave().
+ */
+function ${module_name}_file_presave($$file) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook file update - Act on a file being inserted or updated." enabled="true" name="hook_file_update">/**
+ * Implements hook_file_update().
+ */
+function ${module_name}_file_update($$file) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook file url alter - Alter the URL to a file." enabled="true" name="hook_file_url_alter">/**
+ * Implements hook_file_url_alter().
+ */
+function ${module_name}_file_url_alter($$uri) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook file validate - Check that files meet a given criteria." enabled="true" name="hook_file_validate">/**
+ * Implements hook_file_validate().
+ */
+function ${module_name}_file_validate($$file) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook filetransfer info - Register information about FileTransfer classes provided by a module." enabled="true" name="hook_filetransfer_info">/**
+ * Implements hook_filetransfer_info().
+ */
+function ${module_name}_filetransfer_info() {
+  $$info['${cursor}'] = array(
+    'title' =&gt; t(''),
+    'class' =&gt; '', 
+    'file' =&gt; '', 
+    'file path' =&gt;, 
+    'weight' =&gt; ,
+  );
+  return $$info;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook filetransfer info alter - Alter the FileTransfer class registry." enabled="true" name="hook_filetransfer_info_alter">/**
+ * Implements hook_filetransfer_info_alter().
+ */
+function ${module_name}_filetransfer_info_alter(&amp;$$filetransfer_info) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook filter format disable - Perform actions when a text format has been disabled." enabled="true" name="hook_filter_format_disable">/**
+ * Implements hook_filter_format_disable().
+ */
+function ${module_name}_filter_format_disable($$format) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook filter format insert - Perform actions when a new text format has been created." enabled="true" name="hook_filter_format_insert">/**
+ * Implements hook_filter_format_insert().
+ */
+function ${module_name}_filter_format_insert($$format) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook filter format update - Perform actions when a text format has been updated." enabled="true" name="hook_filter_format_update">/**
+ * Implements hook_filter_format_update().
+ */
+function ${module_name}_filter_format_update($$format) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook filter info - Define content filters." enabled="true" name="hook_filter_info">/**
+ * Implements hook_filter_info().
+ */
+function ${module_name}_filter_info() {
+  $$filters['${cursor}'] = array(
+    'title' =&gt; t(''), 
+    'description' =&gt; t(''), 
+    'process callback' =&gt; '',  
+    'tips callback' =&gt; '',
+  );
+  return $$filters;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook filter info alter - Perform alterations on filter definitions." enabled="true" name="hook_filter_info_alter">/**
+ * Implements hook_filter_info_alter().
+ */
+function ${module_name}_filter_info_alter(&amp;$$info) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook flush caches - Add a list of cache tables to be cleared." enabled="true" name="hook_flush_caches">/**
+ * Implements hook_flush_caches().
+ */
+function ${module_name}_flush_caches() {
+  return array('${cursor}');
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook form - Display a node editing form." enabled="true" name="hook_form">/**
+ * Implements hook_form().
+ */
+function ${module_name}_form($$node, &amp;$$form_state) {
+  $$form = array();
+  
+  $$form['${cursor}'] = array(
+    '#type' =&gt; ''
+  );
+  
+  return $$form;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook form alter - Perform alterations before a form is rendered." enabled="true" name="hook_form_alter">/**
+ * Implements hook_form_alter().
+ */
+function ${module_name}_form_alter(&amp;$$form, &amp;$$form_state, $$form_id) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 form FORM ID alter - Provide a form-specific alteration for shared forms." enabled="true" name="hook_form_BASE_FORM_ID_alter">/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function ${module_name}_form_${form_id}_alter(&amp;$$form, &amp;$$form_state, $$form_id) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 form FORM ID alter - Provide a form-specific alteration." enabled="true" name="hook_form_FORM_ID_alter">/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ${module_name}_form_${form_id}_alter(&amp;$$form, &amp;$$form_state, $$form_id) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook form item" enabled="true" name="hook_form_item">$$form[${form_item}] = array(
+  '#type' =&gt; '${form_item_type}',
+  '#title' =&gt; t('${form_item_title}'),
+  '#description' =&gt; t('${form_item_description}'),
+  '#attributes' =&gt; array(),
+  '#required' =&gt; FALSE,
+  '#tree' =&gt; FALSE,
+  '#parents' =&gt; array(),
+);</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook form system theme settings alter - Allow themes to alter the theme-specific settings form." enabled="true" name="hook_form_system_theme_settings_alter">/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function ${module_name}_form_system_theme_settings_alter(&amp;$$form, &amp;$$form_state) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook forms - Map form_ids to builder functions." enabled="true" name="hook_forms">/**
+ * Implements hook_forms().
+ */
+function ${module_name}_forms() {
+  $$forms['${cursor}'] = array(
+    'callback' =&gt; ''
+  );
+  return $$forms;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook help - Provide online user help." enabled="true" name="hook_help">/**
+ * Implements hook_help().
+ */
+function ${module_name}_help($$path, $$arg) {
+  $$output = '${cursor}';
+  switch ($$path) {
+    case "admin/help#${module_name}":
+      $$output = '';
+      break;
+  }
+  return $$output;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook hook info - Defines one or more hooks that are exposed by a module." enabled="true" name="hook_hook_info">/**
+ * Implements hook_hook_info().
+ */
+function ${module_name}_hook_info() {
+  $$hooks['${cursor}'] = array(
+    'group' =&gt; '',
+  );
+  return $$hooks;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook hook info - Alter information from hook_hook_info()." enabled="true" name="hook_hook_info_alter">/**
+ * Implements hook_hook_info_alter().
+ */
+function ${module_name}_hook_info_alter() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook html head alter - Alter XHTML HEAD tags before they are rendered by drupal_get_html_head()." enabled="true" name="hook_html_head_alter">/**
+ * Implements hook_html_head_alter().
+ */
+function ${module_name}_html_head_alter(&amp;$$head_elements) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook image default styles - Provide module-based image styles for reuse throughout Drupal." enabled="true" name="hook_image_default_styles">/**
+ * Implements hook_image_default_styles().
+ */
+function ${module_name}_image_default_styles() {
+  $$styles = array();
+  
+  $$styles['${cursor}'] = array(
+    'effects' =&gt; array(
+      array(
+        'name' =&gt; '', 
+        'data' =&gt; array(), 
+        'weight' =&gt; ,
+      ),
+    ),
+  );
+
+  return $$styles;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook image effect info - Define information about image effects provided by a module." enabled="true" name="hook_image_effect_info">/**
+ * Implements hook_image_effect_info().
+ */
+function ${module_name}_image_effect_info() {
+  $$effects = array();
+
+  $$effects['${cursor}'] = array(
+    'label' =&gt; t(''), 
+    'help' =&gt; t(''), 
+    'effect callback' =&gt; '', 
+    'form callback' =&gt; '', 
+    'summary theme' =&gt; '',
+  );
+
+  return $$effects;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook image effect info - Alter the information provided in hook_image_effect_info()." enabled="true" name="hook_image_effect_info_alter">/**
+ * Implements hook_image_effect_info_alter().
+ */
+function ${module_name}_image_effect_info_alter(&amp;$$effects) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook image style delete - Respond to image style deletion." enabled="true" name="hook_image_style_delete">/**
+ * Implements hook_image_style_delete().
+ */
+function ${module_name}_image_style_delete($$style) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook image style flush - Respond to image style flushing." enabled="true" name="hook_image_style_flush">/**
+ * Implements hook_image_style_flush().
+ */
+function ${module_name}_image_style_flush($$style) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook image style save - Respond to image style updating." enabled="true" name="hook_image_style_save">/**
+ * Implements hook_image_style_save().
+ */
+function ${module_name}_image_style_save($$style) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook image styles alter - Modify any image styles provided by other modules or the user." enabled="true" name="hook_image_styles_alter">/**
+ * Implements hook_image_styles_alter().
+ */
+function ${module_name}_image_styles_alter(&amp;$$styles) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook image toolkits - Define image toolkits provided by this module." enabled="true" name="hook_image_toolkits">/**
+ * Implements hook_image_toolkits().
+ */
+function ${module_name}_image_toolkits() {
+  return array(
+    '${cursor}' =&gt; array(
+      'title' =&gt; t(''), 
+      'available' =&gt; ,
+    ), 
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook init - Perform setup tasks. Runs at the beginning of page requests." enabled="true" name="hook_init">/**
+ * Implements hook_init().
+ */
+function ${module_name}_init() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook insert - Respond to node insertion." enabled="true" name="hook_insert">/**
+ * Implements hook_insert().
+ */
+function ${module_name}_insert($$node) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook install - Perform module setup tasks." enabled="true" name="hook_install">/**
+ * Implements hook_install().
+ */
+function ${module_name}_install() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook install tasks - Return an array of tasks to be performed by an installation profile." enabled="true" name="hook_install_tasks">/**
+ * Implements hook_install_tasks().
+ */
+function ${module_name}_install_tasks() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook install tasks alter - Alter the full list of installation tasks." enabled="true" name="hook_install_tasks_alter">/**
+ * Implements hook_install_tasks_alter().
+ */
+function ${module_name}_install_tasks_alter(&amp;$$tasks, $$install_state) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook js alter - Perform necessary alterations to the JavaScript before it is presented on the page." enabled="true" name="hook_js_alter">/**
+ * Implements hook_js_alter().
+ */
+function ${module_name}_js_alter(&amp;$$javascript) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook language fallback candidates alter - Perform alterations on the language fallback candidates." enabled="true" name="hook_language_fallback_candidates_alter">/**
+ * Implements hook_language_fallback_candidates_alter().
+ */
+function ${module_name}_language_fallback_candidates_alter(&amp;$$fallback_candidates) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook language init - Allows modules to act after language initialization has been performed." enabled="true" name="hook_language_init">/**
+ * Implements hook_language_init().
+ */
+function ${module_name}_language_init() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook language negotiation info - Allow modules to define their own language providers." enabled="true" name="hook_language_negotiation_info">/**
+ * Implements hook_language_negotiation_info().
+ */
+function ${module_name}_language_negotiation_info() {
+  return array(
+    '${cursor}' =&gt; array(
+      'callbacks' =&gt; array(
+        'language' =&gt; '', 
+        'switcher' =&gt; '', 
+        'url_rewrite' =&gt; '',
+      ), 
+      'file' =&gt; '', 
+      'weight' =&gt; , 
+      'types' =&gt; array(''), 
+      'name' =&gt; t(''), 
+      'description' =&gt; t(''), 
+      'cache' =&gt; ,
+    ),
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook language negotiation info alter - Perform alterations on language providers." enabled="true" name="hook_language_negotiation_info_alter">/**
+ * Implements hook_language_negotiation_info_alter().
+ */
+function ${module_name}_language_negotiation_info_alter(&amp;$$language_providers) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook language switch links alter - Perform alterations on language switcher links." enabled="true" name="hook_language_switch_links_alter">/**
+ * Implements hook_language_switch_links_alter().
+ */
+function ${module_name}_language_switch_links_alter(&amp;$$links, $$type, $$path) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook language types info - Allow modules to define their own language types." enabled="true" name="hook_language_types_info">/**
+ * Implements hook_language_types_info().
+ */
+function ${module_name}_language_types_info() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook language types info alter - Perform alterations on language types." enabled="true" name="hook_language_types_info_alter">/**
+ * Implements hook_language_types_info_alter().
+ */
+function ${module_name}_language_types_info_alter(array &amp;$$language_types) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook library - Registers JavaScript/CSS libraries associated with a module." enabled="true" name="hook_library">/**
+ * Implements hook_library().
+ */
+function ${module_name}_library() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook library - Alters the JavaScript/CSS library registry." enabled="true" name="hook_library_alter">/**
+ * Implements hook_library_alter().
+ */
+function ${module_name}_library_alter(&amp;$$libraries, $$module) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook load - Act on nodes being loaded from the database." enabled="true" name="hook_load">/**
+ * Implements hook_load().
+ */
+function ${module_name}_load($$nodes) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook locale - Allows modules to define their own text groups that can be translated." enabled="true" name="hook_locale">/**
+ * Implements hook_locale().
+ */
+function ${module_name}_locale($$op = 'groups') {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook mail - Prepare a message based on parameters" enabled="true" name="hook_mail">/**
+ * Implements hook_mail().
+ */
+function ${module_name}_mail($$key, &amp;$$message, $$params) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook mail alter - Alter any aspect of email sent by Drupal." enabled="true" name="hook_mail_alter">/**
+ * Implements hook_mail_alter().
+ */
+function ${module_name}_mail_alter(&amp;$$message) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu - Define menu items and page callbacks." enabled="true" name="hook_menu">/**
+ * Implements hook_menu().
+ */
+function ${module_name}_menu() {
+  $$items = array();
+
+  $$items['${cursor}'] = array(
+    'title' =&gt; '',
+    'description' =&gt; '',
+    'page callback' =&gt; '',
+    'page arguments' =&gt; array()
+  );
+
+  return $$items;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu alter - Alter the data being saved to the {menu_router} table after hook_menu is invoked." enabled="true" name="hook_menu_alter">/**
+ * Implements hook_menu_alter().
+ */
+function ${module_name}_menu_alter(&amp;$$items) {
+  $$items['${cursor}'];
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu breadcrumb alter - Alter links in the active trail before it is rendered as the breadcrumb." enabled="true" name="hook_menu_breadcrumb_alter">/**
+ * Implements hook_menu_breadcrumb_alter().
+ */
+function ${module_name}_menu_breadcrumb_alter(&amp;$$active_trail, $$item) {
+  $$items['${cursor}'];
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu contextual links alter - Alter contextual links before they are rendered." enabled="true" name="hook_menu_contextual_links_alter">/**
+ * Implements hook_menu_contextual_links_alter().
+ */
+function ${module_name}_menu_contextual_links_alter(&amp;$$links, $$router_item, $$root_path) {
+  $$items['${cursor}'];
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu delete - Informs modules that a custom menu was deleted." enabled="true" name="hook_menu_delete">/**
+ * Implements hook_menu_delete().
+ */
+function ${module_name}_menu_delete($$menu) {
+  $$items['${cursor}'];
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu get item alter - Alter a menu router item right after it has been retrieved from the database or cache." enabled="true" name="hook_menu_get_item_alter">/**
+ * Implements hook_menu_get_item_alter().
+ */
+function ${module_name}_menu_get_item_alter(&amp;$$router_item, $$path, $$original_map) {
+  $$items['${cursor}'];
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu insert - Informs modules that a custom menu was created." enabled="true" name="hook_menu_insert">/**
+ * Implements hook_menu_insert().
+ */
+function ${module_name}_menu_insert($$menu) {
+  $$items['${cursor}'];
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu item" enabled="true" name="hook_menu_item">$$items['${menu_item_location}'] = array(
+  'title' =&gt; '${menu_item_title}',
+  'description' =&gt; '${menu_item_description}',
+  'page callback' =&gt; '${menu_item_callback}',
+  'page arguments' =&gt; array('${menu_item_arguments}'),
+  'access arguments' =&gt; array('${menu_item_access}'),
+  'type' =&gt; ${menu_item_type},
+);</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu link alter - Alter the data being saved to the {menu_links} table by menu_link_save()." enabled="true" name="hook_menu_link_alter">/**
+ * Implements hook_menu_link_alter().
+ */
+function ${module_name}_menu_link_alter(&amp;$$item, $$menu) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu link delete - Inform modules that a menu link has been deleted." enabled="true" name="hook_menu_link_delete">/**
+ * Implements hook_menu_link_delete().
+ */
+function ${module_name}_menu_link_delete($$link) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu link insert - Inform modules that a menu link has been created." enabled="true" name="hook_menu_link_insert">/**
+ * Implements hook_menu_link_insert().
+ */
+function ${module_name}_menu_link_insert($$link) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu link update - Inform modules that a menu link has been updated." enabled="true" name="hook_menu_link_update">/**
+ * Implements hook_menu_link_update().
+ */
+function ${module_name}_menu_link_update($$link) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu local tasks alter - Alter tabs and actions displayed on the page before they are rendered." enabled="true" name="hook_menu_local_tasks_alter">/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function ${module_name}_menu_local_tasks_alter(&amp;$$data, $$router_item, $$root_path) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu site status alter - Control site status before menu dispatching." enabled="true" name="hook_menu_site_status_alter">/**
+ * Implements hook_menu_site_status_alter().
+ */
+function ${module_name}_menu_site_status_alter(&amp;$$menu_site_status, $$path) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook menu update - Informs modules that a custom menu was updated." enabled="true" name="hook_menu_update">/**
+ * Implements hook_menu_update().
+ */
+function ${module_name}_menu_update($$menu) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook module implements alter - Alter the registry of modules implementing a hook." enabled="true" name="hook_module_implements_alter">/**
+ * Implements hook_module_implements_alter().
+ */
+function ${module_name}_module_implements_alter(&amp;$$implementations, $$hook) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook modules disabled - Perform necessary actions after modules are disabled." enabled="true" name="hook_modules_disabled">/**
+ * Implements hook_modules_disabled().
+ */
+function ${module_name}_modules_disabled($$modules) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook modules enabled - Perform necessary actions after modules are enabled." enabled="true" name="hook_modules_enabled">/**
+ * Implements hook_modules_enabled().
+ */
+function ${module_name}_modules_enabled($$modules) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook modules installed - Perform necessary actions after modules are installed." enabled="true" name="hook_modules_installed">/**
+ * Implements hook_modules_installed().
+ */
+function ${module_name}_modules_installed($$modules) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook modules uninstalled - Perform necessary actions after modules are uninstalled." enabled="true" name="hook_modules_uninstalled">/**
+ * Implements hook_modules_uninstalled().
+ */
+function ${module_name}_modules_uninstalled($$modules) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook multilingual settings changed - Allow modules to react to language settings changes." enabled="true" name="hook_multilingual_settings_changed">/**
+ * Implements hook_multilingual_settings_changed().
+ */
+function ${module_name}_multilingual_settings_changed() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node access - Control access to a node." enabled="true" name="hook_node_access">/**
+ * Implements hook_node_access().
+ */
+function ${module_name}_node_access($$node, $$op, $$account) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node access records - Set permissions for a node to be written to the database." enabled="true" name="hook_node_access_records">/**
+ * Implements hook_node_access_records().
+ */
+function ${module_name}_node_access_records($$node) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node access records alter - Alter permissions for a node before it is written to the database." enabled="true" name="hook_node_access_records_alter">/**
+ * Implements hook_node_access_records_alter().
+ */
+function ${module_name}_node_access_records_alter($$node) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node delete - Respond to node deletion." enabled="true" name="hook_node_delete">/**
+ * Implements hook_node_delete().
+ */
+function ${module_name}_node_delete($$node) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node grants - Inform the node access system what permissions the user has." enabled="true" name="hook_node_grants">/**
+ * Implements hook_node_grants().
+ */
+function ${module_name}_node_grants($$account, $$op) {
+  ${cursor}
+  return $$grants;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node grants alter - Alter user access rules when trying to view, edit or delete a node." enabled="true" name="hook_node_grants_alter">/**
+ * Implements hook_node_grants_alter().
+ */
+function ${module_name}_node_grants_alter(&amp;$$grants, $$account, $$op) {
+  ${cursor}
+  return $$grants;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node info" enabled="true" name="hook_node_info">/**
+ * Implements hook_node_info().
+ */
+function ${module_name}_node_info() {
+  return array(
+    '${module_name}' =&gt; array(
+      'name' =&gt; t('${module_node_name}'),
+      'module' =&gt; '${module_name}',
+      'description' =&gt; t("${module_node_description}"),
+    )
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node insert - Respond to creation of a new node." enabled="true" name="hook_node_insert">/**
+ * Implements hook_node_insert().
+ */
+function ${module_name}_node_insert($$node) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node load - Act on nodes being loaded from the database." enabled="true" name="hook_node_load">/**
+ * Implements hook_node_load().
+ */
+function ${module_name}_node_load($$nodes, $$types) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node operations - Add mass node operations." enabled="true" name="hook_node_operations">/**
+ * Implements hook_node_operations().
+ */
+function ${module_name}_node_operations() {
+  $$operations = array(
+    '${cursor}' =&gt; array(
+      'label' =&gt; t(''),
+      'callback' =&gt; ''
+    )
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node prepare - Act on a node object about to be shown on the add/edit form." enabled="true" name="hook_node_prepare">/**
+ * Implements hook_node_prepare().
+ */
+function ${module_name}_node_prepare($$nodes) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node presave - Act on a node being inserted or updated." enabled="true" name="hook_node_presave">/**
+ * Implements hook_node_presave().
+ */
+function ${module_name}_node_presave($$nodes) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node revision delete - Respond to deletion of a node revision." enabled="true" name="hook_node_revision_delete">/**
+ * Implements hook_node_revision_delete().
+ */
+function ${module_name}_node_revision_delete($$nodes) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node search result - Act on a node being displayed as a search result." enabled="true" name="hook_node_search_result">/**
+ * Implements hook_node_search_result().
+ */
+function ${module_name}_node_search_result($$nodes) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node submit - Act on a node after validated form values have been copied to it." enabled="true" name="hook_node_submit">/**
+ * Implements hook_node_submit().
+ */
+function ${module_name}_node_submit($$nodes, $$form, &amp;$$form_state) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node type delete - Respond to node type deletion." enabled="true" name="hook_node_type_delete">/**
+ * Implements hook_node_type_delete().
+ */
+function ${module_name}_node_type_delete($$info) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node type insert - Respond to node type creation." enabled="true" name="hook_node_type_insert">/**
+ * Implements hook_node_type_insert().
+ */
+function ${module_name}_node_type_insert($$info) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node type update - Respond to node type updates." enabled="true" name="hook_node_type_update">/**
+ * Implements hook_node_type_update().
+ */
+function ${module_name}_node_type_update($$info) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node update - Respond to updates to a node." enabled="true" name="hook_node_update">/**
+ * Implements hook_node_update().
+ */
+function ${module_name}_node_update($$node) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node update index - Act on a node being indexed for searching." enabled="true" name="hook_node_update_index">/**
+ * Implements hook_node_update_index().
+ */
+function ${module_name}_node_update_index($$node) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node validate - Perform node validation before a node is created or updated." enabled="true" name="hook_node_validate">/**
+ * Implements hook_node_validate().
+ */
+function ${module_name}_node_validate($$node, $$form, &amp;$$form_state) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node view - Act on a node that is being assembled before rendering." enabled="true" name="hook_node_view">/**
+ * Implements hook_node_view().
+ */
+function ${module_name}_node_view($$node, $$view_mode, $$langcode) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook node view alter - Alter the results of node_view()." enabled="true" name="hook_node_view_alter">/**
+ * Implements hook_node_view_alter().
+ */
+function ${module_name}_node_view_alter(&amp;$$build) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook openid - Allow modules to modify the OpenID request parameters." enabled="true" name="hook_openid">/**
+ * Implements hook_openid().
+ */
+function ${module_name}_openid($$op, $$request) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook openid discovery method info - Allow modules to declare OpenID discovery methods." enabled="true" name="hook_openid_discovery_method_info">/**
+ * Implements hook_openid_discovery_method_info().
+ */
+function ${module_name}_openid_discovery_method_info() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook openid discovery method info alter - Allow modules to alter discovery methods." enabled="true" name="hook_openid_discovery_method_info_alter">/**
+ * Implements hook_openid_discovery_method_info_alter().
+ */
+function ${module_name}_openid_discovery_method_info_alter(&amp;$$methods) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook openid normalization method info - Allow modules to declare OpenID normalization methods." enabled="true" name="hook_openid_normalization_method_info">/**
+ * Implements hook_openid_normalization_method_info().
+ */
+function ${module_name}_openid_normalization_method_info() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook openid normalization method info alter - Allow modules to alter normalization methods." enabled="true" name="hook_openid_normalization_method_info_alter">/**
+ * Implements hook_openid_normalization_method_info_alter().
+ */
+function ${module_name}_openid_normalizationy_method_info_alter(&amp;$$methods) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook openid response - Allow modules to act upon a successful OpenID login." enabled="true" name="hook_openid_response">/**
+ * Implements hook_openid_response().
+ */
+function ${module_name}_openid_response($$response) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook options list - Returns the list of options to be displayed for a field." enabled="true" name="hook_options_list">/**
+ * Implements hook_options_list().
+ */
+function ${module_name}_options_list($$field, $$instance = NULL) {
+  $$options = array();
+  ${cursor}
+  return $$options;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook overlay child initialize - Allow modules to act when an overlay child window is initialized." enabled="true" name="hook_overlay_child_initialize">/**
+ * Implements hook_overlay_child_initialize().
+ */
+function ${module_name}_overlay_child_initialize() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook overlay parent initialize - Allow modules to act when an overlay parent window is initialized." enabled="true" name="hook_overlay_parent_initialize">/**
+ * Implements hook_overlay_parent_initialize().
+ */
+function ${module_name}_overlay_parent_initialize() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook overlay parent initialize - Allow modules to act when an overlay parent window is initialized." enabled="true" name="hook_overlay_parent_initiliaze">/**
+ * Implements hook_overlay_parent_initialize().
+ */
+function ${module_name}_overlay_parent_initialize() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook overlay page alter - Perform alterations before a page is rendered." enabled="true" name="hook_page_alter">/**
+ * Implements hook_page_alter().
+ */
+function ${module_name}_page_alter(&amp;$$page) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook overlay page build - Add elements to a page before it is rendered." enabled="true" name="hook_page_build">/**
+ * Implements hook_page_build().
+ */
+function ${module_name}_page_build(&amp;$$page) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook overlay page delivery callback alter - Alters the delivery callback used to send the result of the page callback to the browser." enabled="true" name="hook_page_delivery_callback_alter">/**
+ * Implements hook_page_delivery_callback_alter().
+ */
+function ${module_name}_page_delivery_callback_alter(&amp;$$callback) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook path delete - Allow modules to respond to a path being deleted." enabled="true" name="hook_path_delete">/**
+ * Implements hook_path_delete().
+ */
+function ${module_name}_path_delete($$path) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook path insert - Allow modules to respond to a path being inserted." enabled="true" name="hook_path_insert">/**
+ * Implements hook_path_insert().
+ */
+function ${module_name}_path_insert($$path) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook path update - Allow modules to respond to a path being updated." enabled="true" name="hook_path_update">/**
+ * Implements hook_path_update().
+ */
+function ${module_name}_path_update($$path) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook permission - Define user permissions." enabled="true" name="hook_permission">/**
+ * Implements hook_permission().
+ */
+function ${module_name}_permission() {
+   return array(
+    '${cursor}' =&gt; array(
+      'title' =&gt; t(''), 
+      'description' =&gt; t(''),
+    ),
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook prepare - Act on a node object about to be shown on the add/edit form." enabled="true" name="hook_prepare">/**
+ * Implements hook_prepare().
+ */
+function ${module_name}_prepare($$node) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook preprocess - Preprocess theme variables." enabled="true" name="hook_preprocess">/**
+ * Implements hook_preprocess().
+ */
+function ${module_name}_preprocess(&amp;$$variables, $$hook) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook preprocess HOOK - Preprocess theme variables for a specific theme hook." enabled="true" name="hook_preprocess_HOOK">/**
+ * Implements hook_preprocess_HOOK().
+ */
+function ${module_name}_preprocess_${HOOK}(&amp;$$variables) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook process - Process theme variables." enabled="true" name="hook_process ">/**
+ * Implements hook_process().
+ */
+function ${module_name}_process(&amp;$$variables, $$hook) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Durpal 7 hook process HOOK - Process theme variables for a specific theme hook." enabled="true" name="hook_process_HOOK">/**
+ * Implements hook_process_HOOK().
+ */
+function ${module_name}_process_${HOOK}(&amp;$$variables) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook query alter - Perform alterations to a structured query." enabled="true" name="hook_query_alter">/**
+ * Implements hook_query_alter().
+ */
+function ${module_name}_query_alter(QueryAlterableInterface $$query) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook query TAG alter - Perform alterations to a structured query for a given tag." enabled="true" name="hook_query_TAG_alter">/**
+ * Implements hook_query_TAG_alter().
+ */
+function ${module_name}_query_TAG_alter(QueryAlterableInterface $$query) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook ranking - Provide additional methods of scoring for core search results for nodes." enabled="true" name="hook_ranking">/**
+ * Implements hook_ranking().
+ */
+function ${module_name}_ranking() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook rdf mapping - Allow modules to define RDF mappings for field bundles." enabled="true" name="hook_rdf_mapping">/**
+ * Implements hook_rdf_mapping().
+ */
+function ${module_name}_rdf_mapping() {
+  return array(
+    array(
+      'type' =&gt; '${cursor}', 
+      'bundle' =&gt; '', 
+      'mapping' =&gt; array(),
+    ),
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook rdf namespaces - Allow modules to define namespaces for RDF mappings." enabled="true" name="hook_rdf_namespaces">/**
+ * Implements hook_rdf_namespaces().
+ */
+function ${module_name}_rdf_namespaces() {
+  return array(
+    '${cursor}' =&gt;,
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook registry files alter - Perform necessary alterations to the list of files parsed by the registry." enabled="true" name="hook_registry_files_alter">/**
+ * Implements hook_registry_files_alter().
+ */
+function ${module_name}_registry_files_alter(&amp;$$files, $$modules) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook requirements - Check installation requirements and do status reporting." enabled="true" name="hook_requirements">/** * Implements hook_requirements().
+ */
+function ${module_name}_requirements($$phase) {
+  return $$requirements['${module_name}'] = array(
+    'title' =&gt; $$t(''),
+    'value' =&gt; '',
+    'severity' =&gt; ${cursor}
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook schema - Define the current version of the database schema." enabled="true" name="hook_schema">/**
+ * Implements hook_schema().
+ */
+function ${module_name}_schema() {
+  $$schema['${table_name}'] = array(
+    'description' =&gt; '',
+    'fields' =&gt; array(
+      '${cursor}' =&gt; array(
+        'description' =&gt; '',
+      ),
+    ),
+    'indexes' =&gt; array(
+    ),
+    'unique keys' =&gt; array(
+    ),
+    'primary key' =&gt; array(),
+  );
+  return $$schema;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook schema alter - Perform alterations to existing database schemas." enabled="true" name="hook_schema_alter">/**
+ * Implements hook_schema_alter().
+ */
+function ${module_name}_schema_alter($$schema) {
+  $$schema['${cursor}'];
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook schema field" enabled="true" name="hook_schema_field">'${field_name}' =&gt; array(
+  'description' =&gt; t('${field_description}'),
+  'type' =&gt; '${field_type}',${cursor}
+),</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook schema fields skeleton" enabled="true" name="hook_schema_fields">$$schema['${database_table}'] = array(
+  'description' =&gt; t('${table_description}'),
+  'fields' =&gt; array(
+    '${primary_field}' =&gt; array(
+      'description' =&gt; t('${field_description}'),
+      'type' =&gt; '${field_type}', 
+      'not null' =&gt; TRUE
+    ),${cursor}
+  ),
+  'indexes' =&gt; array(),
+  'unique keys' =&gt; array(),
+  'primary key' =&gt; array('${primary_field}'),
+);</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook search access - Define access to a custom search routine." enabled="true" name="hook_search_access">/**
+ * Implements hook_search_access().
+ */
+function ${module_name}_search_access() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook search admin - Add elements to the search settings form." enabled="true" name="hook_search_admin">/**
+ * Implements hook_search_admin().
+ */
+function ${module_name}_search_admin() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook search execute - Execute a search for a set of key words." enabled="true" name="hook_search_execute">/**
+ * Implements hook_search_execute().
+ */
+function ${module_name}_search_execute($$keys = NULL, $$conditions = NULL) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook search info - Define a custom search type." enabled="true" name="hook_search_info">/**
+ * Implements hook_search_info().
+ */
+function ${module_name}_search_info() {
+  return array(
+    'title' =&gt; '${cursor}', 
+    'path' =&gt; '', 
+    'conditions_callback' =&gt; '',
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook search page - Override the rendering of search results." enabled="true" name="hook_search_page">/**
+ * Implements hook_search_page().
+ */
+function ${module_name}_search_page($$results) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook search preprocess - Process text for the search index." enabled="true" name="hook_search_preprocess">/**
+ * Implements hook_search_preprocess().
+ */
+function ${module_name}_search_preprocess($$text) {
+  ${cursor}
+  return $$text;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook search reset - Take action when the search index is going to be rebuilt." enabled="true" name="hook_search_reset">/**
+ * Implements hook_search_reset().
+ */
+function ${module_name}_search_reset() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook search status - Report the status of indexing." enabled="true" name="hook_search_status">/**
+ * Implements hook_search_status().
+ */
+function ${module_name}_search_status() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook shortcut default set - Return the name of a default shortcut set for the provided user account." enabled="true" name="hook_shortcut_default_set">/**
+ * Implements hook_shortcut_default_set().
+ */
+function ${module_name}_shortcut_default_set() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook simpletest alter - Alter the list of tests." enabled="true" name="hook_simpletest_alter">/**
+ * Implements hook_simpletest_alter().
+ */
+function ${module_name}_simpletest_alter() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook stream wrappers - Registers PHP stream wrapper implementations associated with a module." enabled="true" name="hook_stream_wrappers">/**
+ * Implements hook_stream_wrappers().
+ */
+function ${module_name}_stream_wrappers() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook stream wrappers alter - Alters the list of PHP stream wrapper implementations." enabled="true" name="hook_stream_wrappers_alter">/**
+ * Implements hook_stream_wrappers_alter().
+ */
+function ${module_name}_stream_wrappers_alter(&amp;$$wrappers) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook system themes page alter - Alters theme operation links." enabled="true" name="hook_system_info_alter">/**
+ * Implements hook_system_themes_page_alter().
+ */
+function ${module_name}_system_theme_page_alter(&amp;$$theme_groups) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook system info alter - Alter the information parsed from module and theme .info files." enabled="true" name="hook_system_themes_page_alter">/**
+ * Implements hook_system_info_alter().
+ */
+function ${module_name}_system_info_alter(&amp;$$info, $$file, $$type) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook taxonomy term delete - Respond to the deletion of taxonomy terms." enabled="true" name="hook_taxonomy_term_delete">/**
+ * Implements hook_taxonomy_term_delete().
+ */
+function ${module_name}_taxonomy_term_delete($$term) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook taxonomy term insert - Act on taxonomy terms when inserted." enabled="true" name="hook_taxonomy_term_insert">/**
+ * Implements hook_taxonomy_term_insert().
+ */
+function ${module_name}_taxonomy_term_insert($$term) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook taxonomy term load - Act on taxonomy terms when loaded." enabled="true" name="hook_taxonomy_term_load">/**
+ * Implements hook_taxonomy_term_load().
+ */
+function ${module_name}_taxonomy_term_load($$terms) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook taxonomy term presave - Act on taxonomy terms before they are saved." enabled="true" name="hook_taxonomy_term_presave">/**
+ * Implements hook_taxonomy_term_presave().
+ */
+function ${module_name}_taxonomy_term_presave($$term) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook taxonomy term update - Act on taxonomy terms when updated." enabled="true" name="hook_taxonomy_term_update">/**
+ * Implements hook_taxonomy_term_update().
+ */
+function ${module_name}_taxonomy_term_update($$term) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook taxonomy term view alter - Alter the results of taxonomy_term_view()." enabled="true" name="hook_taxonomy_term_view_alter">/**
+ * Implements hook_taxonomy_term_view_alter().
+ */
+function ${module_name}_taxonomy_term_view_alter(&amp;$$build) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook taxonomy vocabulary delete - Respond to the deletion of taxonomy vocabularies." enabled="true" name="hook_taxonomy_vocabulary_delete">/**
+ * Implements hook_taxonomy_vocabulary_delete().
+ */
+function ${module_name}_taxonomy_vocabulary_delete($$vocabulary) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook taxonomy vocabulary insert - Act on taxonomy vocabularies when inserted." enabled="true" name="hook_taxonomy_vocabulary_insert">/**
+ * Implements hook_taxonomy_vocabulary_insert().
+ */
+function ${module_name}_taxonomy_vocabulary_insert($$vocabulary) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook taxonomy vocabulary load - Act on taxonomy vocabularies when loaded." enabled="true" name="hook_taxonomy_vocabulary_load">/**
+ * Implements hook_taxonomy_vocabulary_load().
+ */
+function ${module_name}_taxonomy_vocabulary_load($$vocabularies) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook taxonomy vocabulary presave - Act on taxonomy vocabularies before they are saved." enabled="true" name="hook_taxonomy_vocabulary_presave">/**
+ * Implements hook_taxonomy_vocabulary_presave().
+ */
+function ${module_name}_taxonomy_vocabulary_presave($$vocabulary) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook taxonomy vocabulary update - Act on taxonomy vocabularies when updated." enabled="true" name="hook_taxonomy_vocabulary_update">/**
+ * Implements hook_taxonomy_vocabulary_update().
+ */
+function ${module_name}_taxonomy_vocabulary_update($$vocabulary) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook test finished - An individual test has finished." enabled="true" name="hook_test_finished">/**
+ * Implements hook_test_finished().
+ */
+function ${module_name}_test_finished($$results) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook test group finished - A test group has finished." enabled="true" name="hook_test_group_finished">/**
+ * Implements hook_test_group_finished().
+ */
+function ${module_name}_test_group_finished() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook test group started - A test group has started." enabled="true" name="hook_test_group_started">/**
+ * Implements hook_test_group_started().
+ */
+function ${module_name}_test_group_started() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook theme - Register a module (or theme's) theme implementations." enabled="true" name="hook_theme">/**
+ * Implements hook_theme().
+ */
+function ${module_name}_theme($$existing, $$type, $$theme, $$path) {
+  return array(
+    '${function_name}' =&gt; array(
+      'arguments' =&gt; array(${cursor})
+    )
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook theme registry alter - Alter the theme registry information returned from hook_theme()." enabled="true" name="hook_theme_registry_alter">/**
+ * Implements hook_theme_registry_alter().
+ */
+function ${module_name}_theme_registry_alter(&amp;$$theme_registry) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook themes disabled - Respond to themes being disabled." enabled="true" name="hook_themes_disabled">/**
+ * Implements hook_themes_disabled().
+ */
+function ${module_name}_themes_disabled($$theme_list) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook themes enabled - Respond to themes being enabled." enabled="true" name="hook_themes_enabled">/**
+ * Implements hook_themes_enabled().
+ */
+function ${module_name}_themes_enabled($$theme_list) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook token info - Provide information about available placeholder tokens and token types." enabled="true" name="hook_token_info">/**
+ * Implements hook_token_info().
+ */
+function ${module_name}_token_info() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook token info alter - Alter the metadata about available placeholder tokens and token types." enabled="true" name="hook_token_info_alter">/**
+ * Implements hook_token_info_alter().
+ */
+function ${module_name}_token_info_alter(&amp;$$data) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook tokens - Provide replacement values for placeholder tokens." enabled="true" name="hook_tokens">/**
+ * Implements hook_tokens().
+ */
+function ${module_name}_tokens($$type, $$tokens, array $$data = array(), array $$options = array()) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook tokens alter - Alter replacement values for placeholder tokens." enabled="true" name="hook_tokens_alter">/**
+ * Implements hook_tokens_alter().
+ */
+function ${module_name}_tokens_alter(array &amp;$$replacements, array $$context) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook translated menu link alter - Alter a menu link after it's translated, but before it's rendered." enabled="true" name="hook_translated_menu_link_alter">/**
+ * Implements hook_translated_menu_link_alter().
+ */
+function ${module_name}_translated_menu_link_alter(&amp;$$item, $$map) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook trigger info - Declare triggers (events) for users to assign actions to." enabled="true" name="hook_trigger_info">/**
+ * Implements hook_trigger_info().
+ */
+function ${module_name}_trigger_info() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook trigger info alter - Alter triggers declared by hook_trigger_info()." enabled="true" name="hook_trigger_info_alter">/**
+ * Implements hook_trigger_info_alter().
+ */
+function ${module_name}_trigger_info_alter(&amp;$$triggers) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook uninstall - Remove any information that the module sets." enabled="true" name="hook_uninstall">/**
+ * Implements hook_uninstall().
+ */
+function ${module_name}_uninstall() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook update - Respond to updates to a node." enabled="true" name="hook_update">/**
+ * Implements hook_update().
+ */
+function ${module_name}_update($$node) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook update dependencies - Return an array of information about module update dependencies." enabled="true" name="hook_update_dependencies">/**
+ * Implements hook_update_dependencies().
+ */
+function ${module_name}_update_dependencies() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 update index - Update the search index for this module" enabled="true" name="hook_update_index">/**
+ * Implements hook_update_index().
+ */
+function ${module_name}_update_index() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook update last removed - Return a number which is no longer available as hook_update_N()." enabled="true" name="hook_update_last_removed">/**
+ * Implements hook_update_last_removed().
+ */
+function ${module_name}_update_last_removed() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook update N - Perform a single update." enabled="true" name="hook_update_N">/**
+ * Implements hook_update_N().
+ */
+function ${module_name}_update_${update_number}(&amp;$$sandbox = NULL) {
+  $$ret = array();
+  ${cursor}
+  return $$ret;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook update projects alter - Alter the list of projects before fetching data and comparing versions." enabled="true" name="hook_update_projects_alter">/**
+ * Implements hook_update_projects_alter().
+ */
+function ${module_name}_update_projects_alter(&amp;$$projects) {
+  $$projects['${cursor}'];
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook update status alter - Alter the information about available updates for projects." enabled="true" name="hook_update_status_alter">/**
+ * Implements hook_update_status_alter().
+ */
+function ${module_name}_update_status_alter(&amp;$$projects) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook updater info - Provide information on Updaters (classes that can update Drupal)." enabled="true" name="hook_updater_info">/**
+ * Implements hook_updater_info().
+ */
+function ${module_name}_updater_info($$node) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook updater info alter - Alter the Updater information array." enabled="true" name="hook_updater_info_alter">/**
+ * Implements hook_updater_info_alter().
+ */
+function ${module_name}_updater_info_alter(&amp;$$updaters) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook url inbound alter - Alters inbound URL requests." enabled="true" name="hook_url_inbound_alter">/**
+ * Implements hook_url_inbound_alter().
+ */
+function ${module_name}_url_inbound_alter(&amp;$$path, $$original_path, $$path_language) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook url outbound alter - Alters outbound URLs." enabled="true" name="hook_url_outbound_alter">/**
+ * Implements hook_url_outbound_alter().
+ */
+function ${module_name}_url_outbound_alter(&amp;$$path, &amp;$$options, $$original_path) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user cancel - Act on user account cancellations." enabled="true" name="hook_user_cancel">/**
+ * Implements hook_user_cancel().
+ */
+function ${module_name}_user_cancel($$edit, $$account, $$method) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user cancel methods alter - Modify account cancellation methods." enabled="true" name="hook_user_cancel_methods_alter">/**
+ * Implements hook_user_cancel_methods_alter().
+ */
+function ${module_name}_user_cancel_methods_alter(&amp;$$methods) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user categories - Retrieve a list of user setting or profile information categories." enabled="true" name="hook_user_categories">/**
+ * Implements hook_user_categories().
+ */
+function ${module_name}_user_categories() {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user categories - Retrieve a list of user setting or profile information categories." enabled="true" name="hook_user_categories">/**
+ * Implements hook_user_categories().
+ */
+function ${module_name}_user_categories() {
+  return array(
+    array(
+      'name' =&gt; '${cursor}', 
+      'title' =&gt; t(''), 
+      'weight' =&gt; ,
+    )
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user delete - Respond to user deletion." enabled="true" name="hook_user_delete">/**
+ * Implements hook_user_delete().
+ */
+function ${module_name}_user_delete($$account) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user insert - A user account was created." enabled="true" name="hook_user_insert">/**
+ * Implements hook_user_insert().
+ */
+function ${module_name}_user_insert(&amp;$$edit, $$account, $$category) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user load - Act on user objects when loaded from the database." enabled="true" name="hook_user_load">/**
+ * Implements hook_user_load().
+ */
+function ${module_name}_user_load($$users) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user login - The user just logged in." enabled="true" name="hook_user_login">/**
+ * Implements hook_user_login().
+ */
+function ${module_name}_user_login(&amp;$$edit, $$account) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user logout - The user just logged out." enabled="true" name="hook_user_logout">/**
+ * Implements hook_user_logout().
+ */
+function ${module_name}_user_logout($$account) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user operations - Add mass user operations." enabled="true" name="hook_user_operations">/**
+ * Implements hook_user_operations().
+ */
+function ${module_name}_user_operations() {
+  $$operations = array(
+    '${cursor}' =&gt; array(
+      'label' =&gt; t(''),
+      'callback' =&gt; ''
+    )
+  );
+  return $$operations;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user presave - A user account is about to be created or updated." enabled="true" name="hook_user_presave">/**
+ * Implements hook_user_presave().
+ */
+function ${module_name}_user_presave(&amp;$$edit, $$account, $$category) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user role delete - Inform other modules that a user role has been deleted." enabled="true" name="hook_user_role_delete">/**
+ * Implements hook_user_role_delete().
+ */
+function ${module_name}_user_role_delete($$role) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user role inserrt - Inform other modules that a user role has been added." enabled="true" name="hook_user_role_insert">/**
+ * Implements hook_user_role_insert().
+ */
+function ${module_name}_user_role_insert($$role) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user role presave - Inform other modules that a user role is about to be saved." enabled="true" name="hook_user_role_presave">/**
+ * Implements hook_user_role_presave().
+ */
+function ${module_name}_user_role_presave($$role) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user role update - Inform other modules that a user role has been updated." enabled="true" name="hook_user_role_update">/**
+ * Implements hook_user_role_update().
+ */
+function ${module_name}_user_role_update($$role) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user update - A user account was updated." enabled="true" name="hook_user_update">/**
+ * Implements hook_user_update().
+ */
+function ${module_name}_user_update(&amp;$$edit, $$account, $$category) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user view - The user's account information is being displayed." enabled="true" name="hook_user_view">/**
+ * Implements hook_user_view().
+ */
+function ${module_name}_user_view($$account, $$view_mode, $$langcode) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook user view alter - The user was built; the module may modify the structured content." enabled="true" name="hook_user_view_alter">/**
+ * Implements hook_user_view_alter().
+ */
+function ${module_name}_user_view_alter(&amp;$$build) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook username alter - Alter the username that is displayed for a user." enabled="true" name="hook_username_alter">/**
+ * Implements hook_username_alter().
+ */
+function ${module_name}_username_alter(&amp;$$name, $$account) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook validate - Perform node validation before a node is created or updated." enabled="true" name="hook_validate">/**
+ * Implements hook_validate().
+ */
+function ${module_node}_validate($$node, &amp;$$form) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook verify update archive - Verify an archive after it has been downloaded and extracted." enabled="true" name="hook_verify_update_archive">/**
+ * Implements hook_verify_update_archive().
+ */
+function ${module_name}_verify_update_archive($$project, $$archive_file, $$directory) {
+  ${cursor}
+  return $$node;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook view - Display a node." enabled="true" name="hook_view">/**
+ * Implements hook_view().
+ */
+function ${module_name}_view($$node, $$view_mode) {
+  ${cursor}
+  return $$node;
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook watchdog - Log an event message" enabled="true" name="hook_watchdog">/**
+ * Implements hook_watchdog().
+ */
+function ${module_name}_watchdog(array $$log_entry) {
+  ${cursor}
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook xmlrpc - Register XML-RPC callbacks." enabled="true" name="hook_xmlrpc">/**
+ * Implements hook_xmlrpc().
+ */
+function ${module_name}_xmlrpc() {
+  return array(
+    ${cursor}
+  );
+}</template><template autoinsert="true" context="php" deleted="false" description="Drupal 7 hook xmlrpc alter - Alters the definition of XML-RPC methods before they are called." enabled="true" name="hook_xmlrpc_alter">/**
+ * Implements hook_xmlrpc_alter().
+ */
+function ${module_name}_xmlrpc_alter(&amp;$$methods) {
+  ${cursor}
+}</template></templates>
