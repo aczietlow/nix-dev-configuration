@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+  ServerAdmin webmaster@localhost
+  ServerName dev-chris-lt.local
+
+  DocumentRoot /home/aczietlow/Web
+
+  <Directory />
+    Options FollowSymLinks
+    Options +Indexes
+    AllowOverride All
+  </Directory>
+</VirtualHost>

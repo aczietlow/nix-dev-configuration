@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+  ServerAdmin webmaster@localhost
+  ServerName web
+
+  DocumentRoot /home/aczietlow/Web
+
+  <Directory />
+    Options FollowSymLinks
+    Options +Indexes
+    AllowOverride All
+  </Directory>
+</VirtualHost>
