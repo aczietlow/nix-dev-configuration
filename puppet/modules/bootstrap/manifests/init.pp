@@ -8,4 +8,11 @@ class bootstrap {
   exec { 'apt-get update':
     command => 'apt-get update'
   }
+
+  # set defaults for file ownership/permissions
+  File {
+    owner => 'vagrant',
+    group => 'vagrant',
+    mode  => '0644',
+  }
 }
