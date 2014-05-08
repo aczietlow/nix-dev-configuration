@@ -1,0 +1,31 @@
+# Vagrant build files
+.vagrant
+
+# Configuration file
+config.json
+config.yml 
+
+
+# Exclude IDE management files.
+
+# Phpstorm
+.idea
+
+# Eclipse
+.project
+.settings
+.buildpath
+
+# Netbeans
+netbeans
+
+# Exclude hidden OS files.
+.DS_Store
+._*
+Thumbs.db
+
+# Exclude other VCS tracking files.
+#CVS
+.#*
+.svn
+.bzre
