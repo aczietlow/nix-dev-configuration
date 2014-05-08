@@ -23,16 +23,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # @TODO Override memory based on config file.
   config.vm.provider "virtualbox" do |vb|
-     # Use VBoxManage to customize the VM. For example to change memory:
-     vb.customize ["modifyvm", :id, "--memory", "1024"]
+    # Use VBoxManage to customize the VM. For example to change memory:
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
 
-     # Synced Folder
-     config.vm.synced_folder "Sites", "/var/www", type: "nfs"
+    # Synced Folder
+    config.vm.synced_folder "www", "/var/www", type: "nfs"
   end
 
-  # config.vm.provision "puppet" do |puppet|
-  #   puppet.manifests_path = "manifests"
-  #   puppet.manifest_file  = "site.pp"
-  # end
+  config.vm.provision "puppet" do |puppet|
+    puppet.manifests_path = "puppet/manifests"   
+    puppet.manifest_file  = "site.pp"
+    puppet.module_path = "puppet/modules"
+  end
 
 end
