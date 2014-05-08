@@ -12,4 +12,4 @@ class { 'bootstrap':
 	stage => 'pre'
 }
 
-include bootstrap, other
+include bootstrap, other, apache, apache_vhosts
