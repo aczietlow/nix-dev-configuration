@@ -1,8 +1,10 @@
 class apache {
   package {'apache2':
     ensure => present,
-    before => [File["/etc/apache2/apache2.conf"],
-      File["/etc/apache2/envvars"]]
+    before => [
+      File["/etc/apache2/apache2.conf"],
+      File["/etc/apache2/envvars"]
+    ]
   }
 
   # Sync custom apache2.conf
@@ -44,5 +46,17 @@ class apache {
     ],
   }
 
-  #@todo Remove the conf files in the conf.d directory except the charset.
+  #Remove the conf files in the conf.d directory except the charset.
+  tidy { 'tidy_apache_conf':
+    path    => '/etc/apache2/conf.d/',
+    age => 1s,
+    recurse => 1,
+    backup  => true,
+    matches => [
+      'localized-error-pages',
+  	  'other-vhosts-access-log',
+  	  'security'
+    ],
+    require => Package['apache2']
+  }
 }
