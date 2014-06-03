@@ -57,7 +57,7 @@ alias cl='clear'
 ###########################################
 #   MAC Specific
 ###########################################
-export PATH="$PATH:/Applications/Dev Desktop/drush"
+alias drush='/usr/local/lib/drush/drush'
 
 #mysql
 alias mysql='/usr/local/mysql/bin/mysql'
