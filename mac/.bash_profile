@@ -20,10 +20,29 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 #Composer
 alias getcomposer='curl -sS https://getcomposer.org/installer | php' #Get the latest composer version
 
+#Selenium
+#alias seleniumUp ='java -jar /usr/local/bin/selenium-server-standalone-2.39.0.jar -trustAllSSLCertificates -Dwebdriver.chromdriver=/usr/local/bin/chromedriver'
+
 #Other
 alias editHosts='sudo edit /etc/hosts'                  # editHosts:        Edit /etc/hosts file
 httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grabs headers from web page
 
+#   ---------------------------------------
+#   GIT
+#   ---------------------------------------
+
+#GIT PS1 promt
+
+#https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+source ~/.git-prompt.sh
+
+##PS1='[\h:\W \u\$(__git_ps1 " (%s)")]\$ '
+GIT_PS1_SHOWUPSTREAM='verbose'
+export PS1="[\u@\h:\W]\`__git_ps1\` \$ "
+
+#Git tab completion
+#https://github.com/git/git/raw/master/contrib/completion/git-completion.bash
+source ~/git-completion.bash
 
 #   ---------------------------------------
 #   MISC ALIASES
@@ -57,13 +76,23 @@ alias cl='clear'
 ###########################################
 #   System Specific
 ###########################################
-#export PATH="$PATH:/Applications/Dev Desktop/drush"
+#MAC
+alias show='defaults write com.apple.finder AppleShowAllFiles -bool true;killall Finder'
+alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false;killall Finder'
+
+alias drush='/Users/aczietlow/Sites/drush/drush6/drush'
+alias drush6='/Users/aczietlow/Sites/drush/drush6/drush'
+alias drush7='/Users/aczietlow/Sites/drush/drush7/drush'
+
+export PATH="$PATH:/usr/local/bin/composer"
+export PATH="$PATH:/Users/aczietlow/pear/bin"
 
 #mysql
-export PATH="$PATH:/usr/local/mysql/bin/mysql"
-alias mysql='/usr/local/mysql/bin/mysql'
-alias mysqldump='/usr/local/mysql/bin/mysqldump'
-alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
+export PATH=$PATH:/usr/local/mysql/bin
+#export PATH=$PATH:/usr/local/mysql/bin/mysql
+#alias mysql='/usr/local/mysql/bin/mysql'
+#alias mysqldump='/usr/local/mysql/bin/mysqldump'
+#alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 
 #Apache
 alias apacheEdit='sudo edit /etc/httpd/httpd.conf'      # apacheEdit:       Edit httpd.conf
@@ -73,3 +102,6 @@ alias apacheLogs="less +F /var/log/apache2/error_log"   # Apachelogs:   Shows ap
 
 #Vagrant
 export PATH=$PATH:/Applications/VirtualBox.app/Contents/MacOS/
+ 
+#Some of my favorite linux aliases
+alias ll="ls -la"
