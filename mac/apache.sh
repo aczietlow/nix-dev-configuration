@@ -13,8 +13,9 @@ if [[ ! -d /Users/$username/Sites ]]; then
 fi
 
 # Use my httpd.conf instead of the one that ships with macs.
-
 sudo mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.bak
 cd /etc/apache2/ && { sudo curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/httpd.conf ; cd -; }
 sudo sed -i '' "s/USERNAME/$username/g" /etc/apache2/httpd.conf
 sudo apachectl restart
+
+# @TODO Get virtual host added to direct to local work environment
