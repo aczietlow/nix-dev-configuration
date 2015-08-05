@@ -12,11 +12,10 @@ if [[ ! -d /Users/$username/Sites ]]; then
   mkdir /Users/$username/Sites
 fi
 
-# Use my http.conf instead of the one that ships with macs.
+# Use my httpd.conf instead of the one that ships with macs.
 
 #sudo mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.bak
 #cd /etc/apache2/ && { sudo curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/httpd.conf ; cd -; }
 cd ~/Sites/ && { sudo curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/httpd.conf ; cd -; }
-echo "$username"
 sudo sed -i "s/USERNAME/$username/g" ~/Sites/httpd.conf
 sudo apachectl restart
