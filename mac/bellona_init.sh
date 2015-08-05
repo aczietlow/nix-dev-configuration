@@ -3,7 +3,7 @@
 username=$1
 
 if [ -z "$username" ]; then
-    echo "Must provide argument for the user name."
+    echo "Must provide username as 1st arguement."
     exit 1
 fi
 
@@ -62,6 +62,10 @@ ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 
 # Setup Apache
 ./apache.sh "$username"
+
+# Use my bash profile.
+cd ~/ && { curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/.bash_profile ; cd -; }
+
 
 # Reminder of what's left to be done.
 echo "Now that that's done I need you to:

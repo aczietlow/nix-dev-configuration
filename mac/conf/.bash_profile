@@ -57,7 +57,6 @@ alias cl='clear'
 ###########################################
 #   System Specific
 ###########################################
-#export PATH="$PATH:/Applications/Dev Desktop/drush"
 
 #mysql
 export PATH="$PATH:/usr/local/mysql/bin/mysql"
