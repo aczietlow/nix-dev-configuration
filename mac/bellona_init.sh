@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 
+username=$1
+
+if [ -z "$username" ]; then
+    echo "Must provide argument for the user name."
+    exit 1
+fi
+
 # init
 function pause(){
    read -p "$*"
  }
+
 # Hack to remind me to get Xcode.
 echo "Get Xcode from: https://developer.apple.com/downloads/index.action#."
 pause 'Press [Enter] once installed.'
@@ -51,6 +59,9 @@ brew cask install jing
 
 # mysql should start on launch
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+
+# Setup Apache
+./apache.sh "$username"
 
 # Reminder of what's left to be done.
 echo "Now that that's done I need you to:
