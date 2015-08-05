@@ -65,10 +65,14 @@ alias mysqldump='/usr/local/mysql/bin/mysqldump'
 alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 
 #Apache
-alias apacheEdit='sudo edit /etc/httpd/httpd.conf'      # apacheEdit:       Edit httpd.conf
+alias apacheEdit='sudo vim /etc/httpd/httpd.conf'      # apacheEdit:       Edit httpd.conf
 alias apacheRestart='sudo apachectl graceful'           # apacheRestart:    Restart Apache
 alias herr='tail /var/log/httpd/error_log'              # herr:             Tails HTTP error logs
 alias apacheLogs="less +F /var/log/apache2/error_log"   # Apachelogs:   Shows apache error logs
 
 #Vagrant
 export PATH=$PATH:/Applications/VirtualBox.app/Contents/MacOS/
+
+#BASH
+alias ll='ls -l'
+alias fuckit='sudo "$BASH" -c "$(history -p !!)"'
