@@ -16,7 +16,7 @@ xcode-select --install
 sudo scutil --set HostName vulcan
 
 # Get the things to make us go.
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 curl -L http://install.ohmyz.sh | sh
 brew install git
 brew install mysql
