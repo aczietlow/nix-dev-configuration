@@ -3,7 +3,7 @@
 username=$1
 
 if [ -z "$username" ]; then
-    echo "Must provide argument for the user name."
+    echo "Must provide username as 1st arguement."
     exit 1
 fi
 
