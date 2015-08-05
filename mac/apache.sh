@@ -17,5 +17,6 @@ fi
 #sudo mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.bak
 #cd /etc/apache2/ && { sudo curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/httpd.conf ; cd -; }
 cd ~/Sites/ && { sudo curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/httpd.conf ; cd -; }
-sudo sed -i 's/%username%/"$username"/g' *.conf
+echo "$username"
+sudo sed -i "s/USERNAME/$username/g" ~/Sites/httpd.conf
 sudo apachectl restart
