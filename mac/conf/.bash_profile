@@ -72,7 +72,30 @@ alias apacheLogs="less +F /var/log/apache2/error_log"   # Apachelogs:   Shows ap
 
 #Vagrant
 export PATH=$PATH:/Applications/VirtualBox.app/Contents/MacOS/
+alias vb-restart="sudo /Library/Application\ Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh restart"
 
 #BASH
-alias ll='ls -l'
+alias ll='ls -lhA'
 alias fuckit='sudo "$BASH" -c "$(history -p !!)"'
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+
+#Drupal
+# Drupal module in one command.
+makeDrupalModule() {
+  mkdir $1
+  cd $1
+  echo -e "name = $1" > $1.info
+  echo -e "core = 7.x" >> $1.info
+  echo -e "files[] =" >> $1.info
+  echo -e "<?php" > $1.module
+  echo -e "/**" >> $1.module
+  echo -e " * @file" >> $1.module
+  echo -e " * @copyright (C) Copyright 2014 tbd" >> $1.module
+  echo -e " */" >> $1.module
+  echo -e "function $1_() {" >> $1.module
+  echo -e "}" >> $1.module
+}
+
+# Make my life easier
+alias zietlow.drupal=makeDrupalModule
