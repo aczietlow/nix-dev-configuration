@@ -66,6 +66,7 @@ ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 # Use my bash profile.
 cd ~/ && { curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/.bash_profile ; cd -; }
 
+curl -L https://raw.githubusercontent.com/beautifulcode/ssh-copy-id-for-OSX/master/install.sh | sh
 
 # Reminder of what's left to be done.
 echo "Now that that's done I need you to:
