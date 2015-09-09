@@ -99,3 +99,7 @@ makeDrupalModule() {
 
 # Make my life easier
 alias zietlow.drupal=makeDrupalModule
+
+# Composer executables
+export PATH="$PATH:~/.composer/vendor/bin/"
+
