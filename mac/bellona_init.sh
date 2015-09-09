@@ -34,6 +34,7 @@ brew install node
 brew install heroku-toolbelt
 brew install qt --HEAD
 brew install wkhtmltopdf
+brew install ssh-copy-id
 gem install jekyll bundler
 brew tap homebrew/dupes
 brew tap homebrew/versions
@@ -56,6 +57,12 @@ brew cask install dropbox
 brew cask install flux
 brew cask install evernote
 brew cask install jing
+brew cask install caffeine
+brew cask install sublime-text
+brew cask install sketch
+brew cask install phpstorm
+
+
 
 # mysql should start on launch
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
@@ -66,10 +73,7 @@ ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 # Use my bash profile.
 cd ~/ && { curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/.bash_profile ; cd -; }
 
-
 # Reminder of what's left to be done.
 echo "Now that that's done I need you to:
 1. Add your ssh keys."
 pause 'Press [Enter] when you have added your ssh key.'
-#echo "NICE WORK, Loki! Time to start some chaos..."
-#afplay /Users/michelle/meshev-sounds/the_crowd_roars.mp3
