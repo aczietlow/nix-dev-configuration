@@ -100,6 +100,29 @@ makeDrupalModule() {
 # Make my life easier
 alias zietlow.drupal=makeDrupalModule
 
+#BASH
+alias fuckit='sudo "$BASH" -c "$(history -p !!)"'
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+
+# Drupal
+## Drupal console
+source "$HOME/.console/console.rc" 2>/dev/null
+
 # Composer executables
 export PATH="$PATH:~/.composer/vendor/bin/"
+
+#   ---------------------------------------
+#   GIT
+#   ---------------------------------------
+
+#GIT PS1 promt
+
+#https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+source ~/.git-prompt.sh
+
+##PS1='[\h:\W \u\$(__git_ps1 " (%s)")]\$ '
+GIT_PS1_SHOWUPSTREAM='verbose'
+export PS1="[\u@\h:\W]\`__git_ps1\` \$ "
+
 
