@@ -31,9 +31,6 @@ brew install mysql
 brew install tmux
 brew install wget
 brew install node
-brew install heroku-toolbelt
-brew install qt --HEAD
-brew install wkhtmltopdf
 brew install ssh-copy-id
 gem install jekyll bundler
 brew tap homebrew/dupes
@@ -54,7 +51,6 @@ brew cask install sequel-pro
 brew cask install mou
 brew cask install openoffice
 brew cask install dropbox
-brew cask install flux
 brew cask install evernote
 brew cask install jing
 brew cask install caffeine
