@@ -67,9 +67,19 @@ ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 ./apache.sh "$username"
 
 # Use my bash profile.
+cd ~/
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+mv git-prompt.sh .git-prompt.sh
 cd ~/ && { curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/.bash_profile ; cd -; }
 
 # Reminder of what's left to be done.
 echo "Now that that's done I need you to:
 1. Add your ssh keys."
 pause 'Press [Enter] when you have added your ssh key.'
+
+# Adding comopser, and all of the composer things.
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
+# Add drupal sniffs to code_sniffer
+# ~/.composer/vendor/bin/phpcs --config-set \
+installed_paths ~/.composer/vendor/cakephp/cakephp-codesniffer
