@@ -44,11 +44,9 @@ brew install brew-cask
 brew cask install google-chrome
 brew cask install alfred
 brew cask install iterm2
-brew cask install hipchat
+brew cask install slack
 brew cask install vagrant
 brew cask install virtualbox
-brew cask install sequel-pro
-brew cask install mou
 brew cask install openoffice
 brew cask install dropbox
 brew cask install evernote
@@ -57,8 +55,6 @@ brew cask install caffeine
 brew cask install sublime-text
 brew cask install sketch
 brew cask install phpstorm
-
-
 
 # mysql should start on launch
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
@@ -81,5 +77,9 @@ pause 'Press [Enter] when you have added your ssh key.'
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 # Add drupal sniffs to code_sniffer
-# ~/.composer/vendor/bin/phpcs --config-set \
-installed_paths ~/.composer/vendor/cakephp/cakephp-codesniffer
+# ~/.composer/vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/cakephp/cakephp-codesniffer
+
+# Install docker and docksal
+curl -fsSL get.docksal.io | sh
+fin vm start
+
