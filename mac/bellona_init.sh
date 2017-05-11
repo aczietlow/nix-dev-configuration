@@ -81,5 +81,6 @@ pause 'Press [Enter] when you have added your ssh key.'
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 # Add drupal sniffs to code_sniffer
-# ~/.composer/vendor/bin/phpcs --config-set \
-installed_paths ~/.composer/vendor/cakephp/cakephp-codesniffer
+cd ~/Sites
+# Like this, only for drupal instead of cake.
+# ~/.composer/vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/cakephp/cakephp-codesniffer
