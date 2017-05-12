@@ -1,9 +1,23 @@
 #!/usr/bin/env bash
 
+## Rebuild local machine.
+##
+## Usage: bellona.sh $username
+
+# Abort if anything fails
+set -e
+
 username=$1
 
+# Console colors
+red='\033[0;31m'
+green='\033[0;32m'
+green_bg='\033[42m'
+yellow='\033[1;33m'
+NC='\033[0m'
+
 if [ -z "$username" ]; then
-    echo "Must provide username as 1st arguement."
+    echo "Must provide username as 1st argument."
     exit 1
 fi
 
@@ -20,7 +34,7 @@ pause 'Press [Enter] once installed.'
 sudo xcodebuild -license
 xcode-select --install
 
-# Name machine after god of fire and craftsmanship.
+# Name machine after Roman god of fire and craftsmanship.
 sudo scutil --set HostName vulcan
 
 # Get the things to make us go.
@@ -28,10 +42,10 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 curl -L http://install.ohmyz.sh | sh
 brew install git
 brew install mysql
-brew install tmux
-brew install wget
 brew install node
 brew install ssh-copy-id
+brew install tmux
+brew install wget
 gem install jekyll bundler
 brew tap homebrew/dupes
 brew tap homebrew/versions
@@ -41,20 +55,20 @@ brew install packer
 brew install php56
 brew tap phinze/cask
 brew install brew-cask
-brew cask install google-chrome
 brew cask install alfred
-brew cask install iterm2
-brew cask install slack
-brew cask install vagrant
-brew cask install virtualbox
-brew cask install openoffice
+brew cask install caffeine
 brew cask install dropbox
 brew cask install evernote
+brew cask install google-chrome
+brew cask install iterm2
 brew cask install jing
-brew cask install caffeine
-brew cask install sublime-text
-brew cask install sketch
+brew cask install openoffice
 brew cask install phpstorm
+brew cask install sketch
+brew cask install slack
+brew cask install sublime-text
+brew cask install vagrant
+brew cask install virtualbox
 
 # mysql should start on launch
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
@@ -62,19 +76,45 @@ ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 # Setup Apache
 ./apache.sh "$username"
 
-# Use my bash profile.
-cd ~/
-wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-mv git-prompt.sh .git-prompt.sh
-cd ~/ && { curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/.bash_profile ; cd -; }
+# Pull in my bash profile.
+if [[ ! -f ~/.composer/composer.json ]]
+then
+  cd ~/
+  wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+  mv git-prompt.sh .git-prompt.sh
+  cd ~/ && { curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/.bash_profile ; cd -; }
+  source ~/.bash_profile
+fi
+
 
 # Reminder of what's left to be done.
 echo "Now that that's done I need you to:
 1. Add your ssh keys."
 pause 'Press [Enter] when you have added your ssh key.'
 
-# Adding comopser, and all of the composer things.
+git config --global user.name "Chris Zietlow"
+git config --global user.email aczietlow@gmail.com
+
+# Adding composer, and all of the composer things.
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
+if [[ ! -f ~/.composer/composer.json ]]
+then
+  echo -en "${green_bg} Fetching dependencies via composer. ${NC}"
+  cd ~/.composer/
+  curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/composer.json
+  composer global install
+  cgr pantheon-systems/terminus
+fi
+
+if [[ ! -f ~/Sites/coder ]]
+then
+  echo -en "${green_bg} Setting coding standards ${NC}"
+  drush dl coder-8.x-2.x-dev --package-handler=git_drupalorg
+  cd ~/Sites/coder/
+  wget https://www.drupal.org/files/issues/coder-phpcs3-support-2863898-6.patch
+  git apply coder-phpcs3-support-2863898-6.patch
+fi
 
 # Install docker and docksal
 curl -fsSL get.docksal.io | sh
