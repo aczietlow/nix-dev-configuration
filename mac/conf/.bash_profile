@@ -36,10 +36,16 @@ httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grab
 #https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
 
+#https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+source ~/.git-completion.bash
+
 ##PS1='[\h:\W \u\$(__git_ps1 " (%s)")]\$ '
 GIT_PS1_SHOWUPSTREAM='verbose'
-export PS1="[\u@\h:\W]\`__git_ps1\` \$ "
+export PS1="[\h:\W]\`__git_ps1\` \$ "
 
+# add golang binaries to PATH
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$(go env GOPATH)/bin
 #   ---------------------------------------
 #   MISC ALIASES
 #   ---------------------------------------
