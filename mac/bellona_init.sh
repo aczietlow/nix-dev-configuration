@@ -45,6 +45,7 @@ brew install mysql
 brew install node
 brew install ssh-copy-id
 brew install tmux
+brew install pv #pipeviewer
 brew install wget
 gem install jekyll bundler
 brew tap homebrew/dupes
