@@ -24,12 +24,21 @@ alias getcomposer='curl -sS https://getcomposer.org/installer | php' #Get the la
 alias editHosts='sudo edit /etc/hosts'                  # editHosts:        Edit /etc/hosts file
 httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grabs headers from web page
 
+# add golang binaries to PATH
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$(go env GOPATH)/bin
 
 #   ---------------------------------------
 #   MISC ALIASES
 #   ---------------------------------------
 
 alias cl='clear'
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias ll='ls -lhA'
+alias fuckit='sudo "$SHELL" -c "$(history -p !!)"'
+alias showHiddenFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideHiddenFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 #   extract:  Extract most know archives with one command
 #   ---------------------------------------------------------
@@ -57,7 +66,7 @@ alias cl='clear'
 ###########################################
 #   MAC Specific
 ###########################################
-export PATH="$PATH:/Applications/Dev Desktop/drush"
+export PATH="$PATH:/Applications/Dev Desktop/drush":w
 
 #mysql
 alias mysql='/usr/local/mysql/bin/mysql'
@@ -69,3 +78,6 @@ alias apacheEdit='sudo edit /etc/httpd/httpd.conf'      # apacheEdit:       Edit
 alias apacheRestart='sudo apachectl graceful'           # apacheRestart:    Restart Apache
 alias herr='tail /var/log/httpd/error_log'              # herr:             Tails HTTP error logs
 alias apacheLogs="less +F /var/log/apache2/error_log"   # Apachelogs:   Shows apache error logs
+
+# Composer executables
+export PATH="$PATH:~/.composer/vendor/bin/"
