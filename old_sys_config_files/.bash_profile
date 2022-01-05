@@ -66,7 +66,7 @@ alias hideHiddenFiles='defaults write com.apple.finder AppleShowAllFiles NO; kil
 ###########################################
 #   MAC Specific
 ###########################################
-export PATH="$PATH:/Applications/Dev Desktop/drush":w
+export PATH="$PATH:/Applications/Dev Desktop/drush"
 
 #mysql
 alias mysql='/usr/local/mysql/bin/mysql'
