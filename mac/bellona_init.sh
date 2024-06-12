@@ -88,6 +88,14 @@ then
 fi
 
 
+# Link mysql socket file to someplace accessible by PHP.
+cd /var/
+sudo mkdir mysql
+sudo chmod -R 775 mysql/
+cd mysql/
+sudo ln -s /tmp/mysql.sock mysql.sock
+mysql.server restart
+
 # Reminder of what's left to be done.
 echo "Now that that's done I need you to:
 1. Add your ssh keys."
