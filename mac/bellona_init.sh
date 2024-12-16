@@ -88,6 +88,10 @@ brew install --cask miro
 # Setup Apache
 #./apache.sh "$username # Is part of xcode"
 
+# Add Local Docs
+git clone git@github.com:aczietlow/research-notes.git ~/Documents/research-notes
+git clone git@github.com:aczietlow/rh-notes-obsidian.git ~/Documents/rh-notes
+
 # Pull in my bash profile.
 if [[ ! -f ~/.composer/composer.json ]]
 then
