@@ -34,48 +34,58 @@ pause 'Press [Enter] once installed.'
 sudo xcodebuild -license
 xcode-select --install
 
+# Setup ssh and git  
+echo "Now that that's done I need you to:
+1. Generate and add ssh keys to github
+ssh-keygen -t ed25519 -C \"aczietlow@gmail.com\""
+pause 'Press [Enter] when you have added your ssh key.'
+
+git config --global user.name "Chris Zietlow"
+git config --global user.email aczietlow@gmail.com
+
 # Name machine after Roman god of fire and craftsmanship.
-sudo scutil --set HostName vulcan
+# sudo scutil --set HostName vulcan
 
 # Get the things to make us go.
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-curl -L http://install.ohmyz.sh | sh
-brew install git
+## A proper package manager
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo >> /Users/czietlow/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/czietlow/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+## A proper terminal
+brew install --cask iterm2
+brew install zsh
+chsh -s $(which zsh)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+## A real IDE
+brew install go
+brew install ripgrep tmux neovim
+git clone git@github.com:aczietlow/nvimrc.git ~/.config/nvim
+
+## Regularly used apps
 brew install mysql
 brew install node
 brew install ssh-copy-id
-brew install tmux
 brew install pv #pipeviewer
 brew install wget
-gem install jekyll bundler
-brew tap homebrew/dupes
-brew tap homebrew/versions
-brew tap homebrew/homebrew-php
-brew tap homebrew/binary
-brew install packer
-brew install php56
-brew tap phinze/cask
-brew install brew-cask
-brew cask install alfred
-brew cask install caffeine
-brew cask install dropbox
-brew cask install evernote
-brew cask install google-chrome
-brew cask install iterm2
-brew cask install jing
-brew cask install openoffice
-brew cask install phpstorm
-brew cask install sketch
-brew cask install slack
-brew cask install sublime-text
-brew cask install vagrant
-brew cask install virtualbox
+brew install --cask alfred
+brew install --cask caffeine
+brew install --cask evernote
+brew install --cask google-chrome
+brew install --cask phpstorm
+brew install --cask sketch
+brew install --cask slack
+brew install --cask virtualbox
+brew install --cask obsidian
+brew install --cask miro
 
 # mysql should start on launch
-ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+# ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 
 # Setup Apache
-./apache.sh "$username"
+#./apache.sh "$username # Is part of xcode"
 
 # Pull in my bash profile.
 if [[ ! -f ~/.composer/composer.json ]]
@@ -86,15 +96,6 @@ then
   cd ~/ && { curl -fsSLO https://raw.githubusercontent.com/aczietlow/nix-dev-configuration/master/mac/conf/.bash_profile ; cd -; }
   source ~/.bash_profile
 fi
-
-
-# Reminder of what's left to be done.
-echo "Now that that's done I need you to:
-1. Add your ssh keys."
-pause 'Press [Enter] when you have added your ssh key.'
-
-git config --global user.name "Chris Zietlow"
-git config --global user.email aczietlow@gmail.com
 
 # Adding composer, and all of the composer things.
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
