@@ -1,13 +1,16 @@
 # Things that didn't work b/c apple
 
-* install script timed out
-* Show hidden files in finder
-* Show home directory in finder by default
-* Make iterm guake again
-* PHPStrom configuration
+- install script timed out
+- Show hidden files in finder
+- Show home directory in finder by default
+- PHPStrom configuration
 
 # Things to add
 
-* Phpstorm settings
-* iterm configuration
-* docksal config
+- zshrc config files
+- iterm configuration
+  - [x] Added iterm settings
+  - [x] exported and synced profile settings
+  - [ ] Automate this during startup
+- docksal config
+- Phpstorm settings

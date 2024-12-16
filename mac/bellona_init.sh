@@ -42,6 +42,7 @@ pause 'Press [Enter] when you have added your ssh key.'
 
 git config --global user.name "Chris Zietlow"
 git config --global user.email aczietlow@gmail.com
+git config --global pull.rebase true
 
 # Name machine after Roman god of fire and craftsmanship.
 # sudo scutil --set HostName vulcan
