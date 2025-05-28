@@ -71,6 +71,7 @@ brew install node
 brew install ssh-copy-id
 brew install pv #pipeviewer
 brew install wget
+brew install hugo
 brew install --cask alfred
 brew install --cask caffeine
 brew install --cask evernote

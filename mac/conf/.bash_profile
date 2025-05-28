@@ -80,6 +80,12 @@ alias hideHiddenFiles='defaults write com.apple.finder AppleShowAllFiles NO; kil
          fi
     }
 
+    tmuxstart() {
+        tmux new-session -d -s $1 >/dev/null
+
+
+    }
+
 #   ---------------------------------------
 #   System Specific
 #   ---------------------------------------
