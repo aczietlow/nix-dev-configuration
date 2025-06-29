@@ -62,7 +62,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ## A real IDE
 brew install go
-brew install ripgrep tmux neovim
+brew install ripgrep fzf tmux neovim 
 git clone git@github.com:aczietlow/nvimrc.git ~/.config/nvim
 
 ## Regularly used apps

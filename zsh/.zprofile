@@ -3,6 +3,9 @@ alias vim="nvim"
 export PATH="$HOME/.local/go/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 
+# Output env variables needed for brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Composer executables
 export PATH="$PATH:~/.composer/vendor/bin/"
 
