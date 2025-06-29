@@ -173,7 +173,11 @@
 				<real>0.0</real>
 			</dict>
 			<key>Background Image Location</key>
-			<string></string>
+			<string>/Users/czietlow/Downloads/gargantua-black-3840x2160-9621.jpg</string>
+			<key>Background Image Mode</key>
+			<integer>2</integer>
+			<key>Blend</key>
+			<real>0.20000114051094892</real>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
@@ -540,6 +544,8 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>Monaco 12</string>
+			<key>Only The Default BG Color Uses Transparency</key>
+			<true/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1242,5 +1248,9 @@
 	<false/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>
